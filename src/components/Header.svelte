@@ -1,7 +1,4 @@
 <script lang="ts">
-  import { onMount } from "svelte"
-  import { initHighlightJs } from "../utils"
-
   import bg from '../assets/restapify-icon-bg.svg'
 
   import Folder from './Folder.svelte'
@@ -119,10 +116,6 @@
         }
       }
     ];
-
-  onMount(() => {
-    initHighlightJs()
-  })
 </script>
 
 <style lang="scss">
@@ -187,7 +180,7 @@
   <p class="text-center fs-5 lh-sm">Save time on the development of your Frontend project by avoiding wasting it on the API mocking.</p>
   <Terminal class="mx-auto mt-5" content={`$ yarn global add restapify 
 # or npm install -g restapify
-$ restapify serve mockedApi/`} language="bash"/>
+$ restapify serve mockedApi/`} language="shell"/>
   <div class="row justify-content-center mt-5">
     <div class="col-11 col-md-5 col-lg-4 p-0">
       <h3>#1 Define routes

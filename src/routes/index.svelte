@@ -1,4 +1,5 @@
 <script>
+	import { vs2015 } from 'svelte-highlight/styles'
 	import Header from '../components/Header.svelte'
 	import Features from '../components/Features.svelte'
 	import GettingStarted from '../components/GettingStarted.svelte'
@@ -39,7 +40,7 @@
 
 <svelte:head>
 	<title>Restapify</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/vs2015.min.css" integrity="sha512-w8aclkBlN3Ha08SMwFKXFJqhSUx2qlvTBFLLelF8sm4xQnlg64qmGB/A6pBIKy0W8Bo51yDMDtQiPLNRq1WMcQ==" crossorigin="anonymous" />
+	{@html vs2015}
 </svelte:head>
 
 <div id="home">

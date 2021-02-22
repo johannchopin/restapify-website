@@ -1,21 +1,22 @@
 <script lang="ts">
+  import { Highlight } from "svelte-highlight";
+  import { json, javascript, shell, plaintext } from "svelte-highlight/languages";
+
   export let content: string
   export let language: string = ''
 
   let className = ''
+  const languages = {
+    json,
+    javascript,
+    shell,
+    plaintext
+  }
 
   export {className as class}
 </script>
 
 <style lang="scss">
-  pre {
-    width: 300px;
-
-    code {
-      display: inline-block;
-      width: 100%;
-    }
-  }
 
   .editor {
     width: fit-content;
@@ -36,6 +37,18 @@
       border-radius: 0 0 5px 5px;
     }
   }
+
+    .editor :global(pre) {
+      width: 300px;
+      padding: 0;
+      border-radius: 0 0 5px 5px;
+    }
+
+    .editor :global(code) {
+      display: inline-block;
+      width: 100%;
+      padding: 0;
+    }
 </style>
 
 <div class={`editor d-flex flex-column ${className}`}>
@@ -44,7 +57,5 @@
     <div class="rounded-circle mx-1 bg-warning"> </div>
     <div class="rounded-circle mx-1 bg-success"> </div>
   </div>
-  <pre>
-    <code class={`${language} p-3`}>{content}</code>
-  </pre>
+  <Highlight class="p-3 mb-0" language="{languages[language]}" code={content} />
 </div>
