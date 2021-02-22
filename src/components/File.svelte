@@ -37,6 +37,10 @@
       width: 1.5em;
     }
 	}
+
+  div :global(.terminal pre) {
+    width: 300px;
+  }
 </style>
 
 <button on:click={toggle} class="ps-0">

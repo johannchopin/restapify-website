@@ -19,7 +19,6 @@
 <style lang="scss">
 
   .editor {
-    width: fit-content;
     overflow: hidden;
 
     .editor-toolbar {
@@ -39,8 +38,8 @@
   }
 
     .editor :global(pre) {
-      width: 300px;
       padding: 0;
+      width: 100%;
       border-radius: 0 0 5px 5px;
     }
 
